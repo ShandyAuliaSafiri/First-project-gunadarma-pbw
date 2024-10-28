@@ -1,0 +1,82 @@
+[
+  {
+    "email": "jane.doe@example.com",
+    "password": "securePassword123",
+    "role": "admin",
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "dateOfBirth": "1990-01-01"
+  },
+  {
+    "email": "john.smith@example.com",
+    "password": "strongPassword456",
+    "role": "user",
+    "firstName": "John",
+    "lastName": "Smith",
+    "dateOfBirth": "1985-05-15"
+  },
+  {
+    "email": "alice.jones@example.com",
+    "password": "password789",
+    "role": "admin",
+    "firstName": "Alice",
+    "lastName": "Jones",
+    "dateOfBirth": "1992-07-20"
+  },
+  {
+    "email": "bob.brown@example.com",
+    "password": "myPassword321",
+    "role": "user",
+    "firstName": "Bob",
+    "lastName": "Brown",
+    "dateOfBirth": "1988-11-30"
+  },
+  {
+    "email": "carol.white@example.com",
+    "password": "carolPassword654",
+    "role": "admin",
+    "firstName": "Carol",
+    "lastName": "White",
+    "dateOfBirth": "1995-03-10"
+  },
+  {
+    "email": "dave.green@example.com",
+    "password": "davePass987",
+    "role": "user",
+    "firstName": "Dave",
+    "lastName": "Green",
+    "dateOfBirth": "1982-09-25"
+  },
+  {
+    "email": "eve.black@example.com",
+    "password": "eveSecure123",
+    "role": "admin",
+    "firstName": "Eve",
+    "lastName": "Black",
+    "dateOfBirth": "1991-12-05"
+  },
+  {
+    "email": "frank.gray@example.com",
+    "password": "frankPass456",
+    "role": "user",
+    "firstName": "Frank",
+    "lastName": "Gray",
+    "dateOfBirth": "1987-06-15"
+  },
+  {
+    "email": "grace.blue@example.com",
+    "password": "gracePassword789",
+    "role": "admin",
+    "firstName": "Grace",
+    "lastName": "Blue",
+    "dateOfBirth": "1993-04-22"
+  },
+  {
+    "email": "hank.red@example.com",
+    "password": "hankSecure321",
+    "role": "user",
+    "firstName": "Hank",
+    "lastName": "Red",
+    "dateOfBirth": "1989-08-18"
+  }
+]
