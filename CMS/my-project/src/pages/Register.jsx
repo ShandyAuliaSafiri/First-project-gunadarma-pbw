@@ -37,20 +37,13 @@ export default function Register() {
       });
       navigate('/login');
     } catch (error) {
-      if (error.response && error.response.status === 401) {
-        Swal.fire({
-          title: "Unauthorized!",
-          text: "Anda tidak memiliki izin untuk melakukan registrasi.",
-          icon: "error",
-        });
-      } else {
+     
         Swal.fire({
           title: "Error!",
-          text: error.message, 
+          text: error.response.data.message,
           icon: "error",
         });
-      }
-      console.log(error);
+      
     }
   };
 

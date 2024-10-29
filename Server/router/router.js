@@ -16,7 +16,7 @@ router.get('/trips/:id', TripController.getPublicTripById);
 // User Routes (Authenticated)
 router.use(authentication);
 router.post('/trips', TripController.createCMSTrip);
-router.put('/trips/:id', isAuthorized, TripController.updateCMSTrip);
+router.put('/trips/:id', TripController.updateCMSTrip);
 router.get('/trips', TripController.getCMSTrips);
 router.get('/trips/:id', TripController.getCMSTripById);
 router.delete('/trips/:id', isAuthorizedAdmin, TripController.deleteCMSTrip);

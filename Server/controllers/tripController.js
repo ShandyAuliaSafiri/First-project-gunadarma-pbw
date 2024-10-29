@@ -1,19 +1,43 @@
 const { Trip, User } = require("../models");
+const { Op } = require("sequelize");
 
 class TripController {
   // Public Methods - Read Only
   static async getPublicTrips(req, res, next) {
     try {
-      const trips = await Trip.findAll({
+      const { page = 1, limit = 10, search = "", sortBy = "createdAt", sortOrder = "DESC", negara = "" } = req.query;
+      const offset = (page - 1) * limit;
+
+      const whereClause = {
+        [Op.or]: [
+          { trip_name: { [Op.iLike]: `%${search}%` } },
+          { content: { [Op.iLike]: `%${search}%` } }
+        ]
+      };
+
+      if (negara) {
+        whereClause.negara = { [Op.iLike]: `%${negara}%` };
+      }
+
+      const trips = await Trip.findAndCountAll({
+        where: whereClause,
         include: [
           {
             model: User,
             attributes: ["firstName", "lastName"]
           }
         ],
-        order: [['createdAt', 'DESC']]
+        order: [[sortBy, sortOrder], ['rating', 'DESC']],
+        limit: parseInt(limit),
+        offset: parseInt(offset)
       });
-      res.status(200).json(trips);
+
+      res.status(200).json({
+        totalItems: trips.count,
+        totalPages: Math.ceil(trips.count / limit),
+        currentPage: parseInt(page),
+        trips: trips.rows
+      });
     } catch (error) {
       next(error);
     }
@@ -42,17 +66,39 @@ class TripController {
   // CMS Methods - Full CRUD
   static async getCMSTrips(req, res, next) {
     try {
-      const trips = await Trip.findAll({
+      const { page = 1, limit = 10, search = "", sortBy = "createdAt", sortOrder = "DESC", negara = "" } = req.query;
+      const offset = (page - 1) * limit;
+
+      const whereClause = {
+        [Op.or]: [
+          { trip_name: { [Op.iLike]: `%${search}%` } },
+          { content: { [Op.iLike]: `%${search}%` } }
+        ]
+      };
+
+      if (negara) {
+        whereClause.negara = { [Op.iLike]: `%${negara}%` };
+      }
+
+      const trips = await Trip.findAndCountAll({
+        where: whereClause,
         include: [
           {
             model: User,
             attributes: ["email", "firstName", "lastName", "role", "dateOfBirth"]
           }
         ],
-        order: [['createdAt', 'DESC']]
+        order: [[sortBy, sortOrder], ['rating', 'DESC']],
+        limit: parseInt(limit),
+        offset: parseInt(offset)
       });
-      
-      res.status(200).json(trips);
+
+      res.status(200).json({
+        totalItems: trips.count,
+        totalPages: Math.ceil(trips.count / limit),
+        currentPage: parseInt(page),
+        trips: trips.rows
+      });
     } catch (error) {
       next(error);
     }
@@ -80,9 +126,9 @@ class TripController {
 
   static async createCMSTrip(req, res, next) {
     try {
-      const { trip_name, content, imageUrl } = req.body;
+      const { trip_name, content, imageUrl, negara, rating } = req.body;
       
-      if (!trip_name || !content || !imageUrl) {
+      if (!trip_name || !content || !imageUrl || !negara) {
         throw { name: "validation-error", message: "Semua field harus diisi" };
       }
 
@@ -92,7 +138,9 @@ class TripController {
         trip_name,
         content,
         imageUrl,
-        user_id: userId
+        negara,
+        user_id: userId,
+        rating
       });
 
       res.status(201).json(trip);
@@ -104,9 +152,9 @@ class TripController {
   static async updateCMSTrip(req, res, next) {
     try {
       const { id } = req.params;
-      const { trip_name, content, imageUrl } = req.body;
+      const { trip_name, content, imageUrl, negara, rating } = req.body;
 
-      if (!trip_name || !content || !imageUrl) {
+      if (!trip_name || !content || !imageUrl || !negara) {
         throw { name: "validation-error", message: "Semua field harus diisi" };
       }
 
@@ -116,7 +164,9 @@ class TripController {
       await Trip.update({
         trip_name,
         content,
-        imageUrl
+        imageUrl,
+        negara,
+        rating
       }, {
         where: { id }
       });

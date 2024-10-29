@@ -17,8 +17,8 @@ export default function Home() {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`,
         },
       });
-      console.log(data, "<<< data dari home");
-      setPost(data);
+      console.log(data.trips, "<<< data dari home"); // Mengakses data.trips
+      setPost(data.trips); // Mengubah setPost(data) menjadi setPost(data.trips)
     } catch (error) {
       console.log(error);
       if (error.response && error.response.status === 401) {

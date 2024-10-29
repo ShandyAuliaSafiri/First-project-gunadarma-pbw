@@ -32,12 +32,27 @@ module.exports = (sequelize, DataTypes) => {
         notEmpty: true,
       }
     },
+    negara: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+      }
+    },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'Users',
         key: 'id'
+      }
+    },
+    rating: {
+      type: DataTypes.FLOAT,
+      allowNull: true,
+      validate: {
+        min: 0,
+        max: 5
       }
     }
   }, {

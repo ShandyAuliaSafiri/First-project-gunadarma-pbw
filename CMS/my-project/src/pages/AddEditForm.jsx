@@ -7,7 +7,9 @@ export default function AddEditForm() {
   const [form, setForm] = useState({
     trip_name: '',
     content: '',
-    imageUrl: ''
+    imageUrl: '',
+    negara: '',
+    rating: 0
   });
   const { id } = useParams();
   const navigate = useNavigate();
@@ -23,7 +25,9 @@ export default function AddEditForm() {
         setForm({
           trip_name: data.trip_name,
           content: data.content,
-          imageUrl: data.imageUrl
+          imageUrl: data.imageUrl,
+          negara: data.negara,
+          rating: data.rating
         });
       })
       .catch((error) => {
@@ -43,6 +47,14 @@ export default function AddEditForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      if (form.rating > 5) {
+        Swal.fire({
+          title: "Error!",
+          text: "Rating maksimal adalah 5",
+          icon: "error",
+        });
+        return;
+      }
       if (id) {
         await axios.put(`http://localhost:3000/trips/${id}`, form, {
           headers: {
@@ -68,12 +80,12 @@ export default function AddEditForm() {
       }
       navigate('/');
     } catch (error) {
-      Swal.fire({
-        title: "Error!",
-        text: "Terjadi kesalahan",
-        icon: "error",
-      });
-      console.log(error);
+       Swal.fire({
+         title: "Unauthorized!",
+         text: "Anda tidak memiliki izin untuk melakukan edit.",
+         icon: "error",
+       });
+      navigate('/')
     }
   };
 
@@ -116,6 +128,45 @@ export default function AddEditForm() {
             value={form.imageUrl}
             onChange={handleChange}
             className="w-full p-3 border-4 border-black rounded font-bold focus:ring-4 focus:ring-yellow-400 focus:outline-none"
+            required
+          />
+        </div>
+        <div className="bg-white p-6 border-4 border-black rounded transform hover:-translate-y-1 transition-transform">
+          <label className="block text-black text-xl font-bold mb-4" htmlFor="negara">
+            Negara
+          </label>
+          <select
+            name="negara"
+            value={form.negara}
+            onChange={handleChange}
+            className="w-full p-3 border-4 border-black rounded font-bold focus:ring-4 focus:ring-yellow-400 focus:outline-none"
+            required
+          >
+            <option value="">Pilih Negara</option>
+            <option value="Indonesia">Indonesia</option>
+            <option value="Malaysia">Malaysia</option>
+            <option value="Singapura">Singapura</option>
+            <option value="Thailand">Thailand</option>
+            <option value="Filipina">Filipina</option>
+            <option value="Vietnam">Vietnam</option>
+            <option value="Laos">Laos</option>
+            <option value="Myanmar">Myanmar</option>
+            <option value="Kamboja">Kamboja</option>
+            <option value="Brunei">Brunei</option>
+          </select>
+        </div>
+        <div className="bg-white p-6 border-4 border-black rounded transform hover:-translate-y-1 transition-transform">
+          <label className="block text-black text-xl font-bold mb-4" htmlFor="rating">
+            Rating
+          </label>
+          <input
+            type="number"
+            name="rating"
+            value={form.rating}
+            onChange={handleChange}
+            min="0"
+            className="w-full p-3 border-4 border-black rounded font-bold focus:ring-4 focus:ring-yellow-400 focus:outline-none"
+            max="5"
             required
           />
         </div>

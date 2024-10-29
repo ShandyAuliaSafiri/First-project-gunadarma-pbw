@@ -1,0 +1,102 @@
+[
+  {
+    "trip_name": "Exploring Bangkok's Grand Palace",
+    "content": "Mengunjungi Grand Palace yang megah di Bangkok.",
+    "imageUrl": "https://www.expique.com/wp-content/uploads/2021/01/Grand-Palace-7.jpg",
+    "negara": "Thailand",
+    "user_id": 1,
+    "rating": 4,
+    "createdAt": "2024-01-15T00:00:00Z",
+    "updatedAt": "2024-01-15T00:00:00Z"
+  },
+  {
+    "trip_name": "Ha Long Bay Adventure",
+    "content": "Berlayar di teluk Ha Long yang ikonik.",
+    "imageUrl": "https://media.tacdn.com/media/attractions-splice-spp-674x446/12/3f/40/63.jpg",
+    "negara": "Vietnam",
+    "user_id": 1,
+    "rating": 5,
+    "createdAt": "2024-01-16T00:00:00Z",
+    "updatedAt": "2024-01-16T00:00:00Z"
+  },
+  {
+    "trip_name": "Singapore's Gardens by the Bay",
+    "content": "Mengeksplorasi keajaiban teknologi dan alam di Gardens by the Bay.",
+    "imageUrl": "https://happyfrogtravels.com/wp-content/uploads/2023/03/Gardens-by-the-Bay-01.jpg",
+    "negara": "Singapura",
+    "user_id": 1,
+    "rating": 3,
+    "createdAt": "2024-01-17T00:00:00Z",
+    "updatedAt": "2024-01-17T00:00:00Z"
+  },
+  {
+    "trip_name": "Angkor Wat Temple Complex",
+    "content": "Menjelajahi kompleks candi Angkor Wat yang megah.",
+    "imageUrl": "https://mmc.tirto.id/image/2022/06/07/istock-478677754_ratio-16x9.jpg",
+    "negara": "Kamboja",
+    "user_id": 1,
+    "rating": 4,
+    "createdAt": "2024-01-18T00:00:00Z",
+    "updatedAt": "2024-01-18T00:00:00Z"
+  },
+  {
+    "trip_name": "Kuala Lumpur City Adventure",
+    "content": "Mengunjungi Menara Petronas yang ikonik.",
+    "imageUrl": "https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2023/04/18144201/kuala-lumpur-night.jpeg",
+    "negara": "Malaysia",
+    "user_id": 1,
+    "rating": 5,
+    "createdAt": "2024-01-19T00:00:00Z",
+    "updatedAt": "2024-01-19T00:00:00Z"
+  },
+  {
+    "trip_name": "Bali Island Paradise",
+    "content": "Menikmati keindahan pantai Bali.",
+    "imageUrl": "https://www.akurasi.id/wp-content/uploads/2024/01/Tantangan-pariwisata-bali-di-tahun-2024-780x470.jpg",
+    "negara": "Indonesia",
+    "user_id": 1,
+    "rating": 4,
+    "createdAt": "2024-01-20T00:00:00Z",
+    "updatedAt": "2024-01-20T00:00:00Z"
+  },
+  {
+    "trip_name": "Manila Heritage Tour",
+    "content": "Mengeksplorasi kota tua Intramuros.",
+    "imageUrl": "https://www.travel-palawan.com/wp-content/uploads/2018/01/manila-city-tour-copy-768x517.jpeg",
+    "negara": "Filipina",
+    "user_id": 1,
+    "rating": 3,
+    "createdAt": "2024-01-21T00:00:00Z",
+    "updatedAt": "2024-01-21T00:00:00Z"
+  },
+  {
+    "trip_name": "Vientiane Temple Tour",
+    "content": "Mengunjungi Pha That Luang yang ikonik.",
+    "imageUrl": "https://laostravel.com/images/2019/07/intro-Highlights-Of-Vientiane.jpg",
+    "negara": "Laos",
+    "user_id": 1,
+    "rating": 2,
+    "createdAt": "2024-01-22T00:00:00Z",
+    "updatedAt": "2024-01-22T00:00:00Z"
+  },
+  {
+    "trip_name": "Yangon Golden Pagodas",
+    "content": "Mengagumi kemegahan Shwedagon Pagoda.",
+    "imageUrl": "https://discoverydmc.com/blog/wp-content/uploads/2015/09/photodune-5219542-shwedagon-golden-pagoda-in-yangon-myanmar-burma-m-1.jpg",
+    "negara": "Myanmar",
+    "user_id": 1,
+    "rating": 5,
+    "createdAt": "2024-01-23T00:00:00Z",
+    "updatedAt": "2024-01-23T00:00:00Z"
+  },
+  {
+    "trip_name": "Brunei Royal Experience",
+    "content": "Brunei Darussalam, sebuah negara kecil namun kaya di Asia Tenggara, menawarkan pengalaman kerajaan yang memukau bagi para pengunjung. Salah satu daya tarik utama adalah Masjid Omar Ali Saifuddien, sebuah mahakarya arsitektur Islam yang berdiri megah di ibu kota Bandar Seri Begawan. Masjid ini dikenal dengan kubah emasnya yang berkilauan dan interior yang mewah, mencerminkan kemegahan dan spiritualitas.",
+    "imageUrl": "https://www.pelago.com/img/products/BN-Brunei/brunei-half-day-city-tour-with-royal-regalia-istana-nurul-iman--kampung-ayer/f7472eed-2401-4160-8305-7096dcf8d35c_brunei-half-day-city-tour-with-royal-regalia-istana-nurul-iman--kampung-ayer-medium.jpg",
+    "negara": "Brunei Darussalam",
+    "user_id": 1,
+    "rating": 4,
+    "createdAt": "2024-01-24T00:00:00Z",
+    "updatedAt": "2024-01-24T00:00:00Z"
+  }
+]

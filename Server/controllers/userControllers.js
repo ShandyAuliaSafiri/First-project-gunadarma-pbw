@@ -6,10 +6,10 @@ class UserController {
   static async register(req, res, next) {
     try {
     //   Check if requester is admin
-      if (req.user.role !== 'admin') {
-        throw { name: "unauthorized" };
-      }
-      console.log(req.user,">>>");
+      // if (req.user.role !== 'admin') {
+      //   throw { name: "unauthorized" };
+      // }
+      // console.log(req.user,">>>");
       
 
       const { email, password, role, firstName, lastName, dateOfBirth } = req.body;
@@ -20,9 +20,9 @@ class UserController {
       }
 
       // Validate role
-      if (role !== 'admin' && role !== 'user') {
-        throw { name: "invalid-role" };
-      }
+      // if (role !== 'admin' && role !== 'user') {
+      //   throw { name: "invalid-role" };
+      // }
 
       const user = await User.create({
         email,
